@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+  Nueva Nota
+{% endblock %}
+{% block body %}
+    <body background="/static/fondo_e.png">
+    {% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="/static/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="#">Post-It-Note-SEAA</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/inicio">Inicio</a></li>
+            <li class=""><a href="/categoria">Crea categoría</a></li>
+            <li class=""><a href="/verNotas">Ver notas</a></li>
+            <li class=""><a href="/logout">Cerrar Sesión</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    {% endblock %}
+    {% block content %}
+      <div class="conteiner">
+            <div id="login-column" class="col-md-6 ">
+                <div id="login-box" class="col-md-12">
+                    <form action="/crearNota" method="POST">
+                       <center><h1>Crear nueva nota</h1></center> 
+                        <div class='row justify-content-center align-items-center'>
+                            <div class="form-group ">
+                            <label for="">Ingresa titulo de la nota:</label>
+                            <input type="text" class="form-control" placeholder="Titulo" id="titulo" name="titulo">
+                            <label for="">Ingresa contenido:</label>
+                            <br>
+                            <textarea name="contenido" id="contenido" placeholder="Contenido" cols="90" rows="10" ></textarea>
+                            <br>
+                            <label for="">Ingresa fecha de creacion:</label>
+                            <input type="text" class="form-control" placeholder="Fecha de creación" id="fecha" name="fecha">
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary center-block btn-lg" value="Crear">
+                    </form>   
+                    <p>{{mensaje}}</p>
+                 </div>
+            </div>
+        </div>
+    
+    
+    {% endblock %}
+{% endblock %}

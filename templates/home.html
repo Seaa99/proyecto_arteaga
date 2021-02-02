@@ -1,0 +1,48 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <body background="/static/fondo_h.jpg">
+    {% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="/static/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="#">Post-It-Note-SEAA</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/registro">Registrar</a></li>
+            <li class=""><a href="/login">Iniciar Sesión</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+   
+        <div id="home_row" class="row justify-content-center align-items-center">
+            <center><font face="comic sans ms,arial,verdana"><h1>¿Qué es Post-It-Note-SEAA? </h1></font></center>
+            <p style="font-size: large;" align="center">Se trata de una plataforma donde se crean de manera virtual las notas, ya que en de manera física</p> 
+            <p style="font-size: large;" align="center">es una pequeña hoja de papel con una tira de pegamento que se puede volver a adherir en su parte</p>    
+            <p style="font-size: large;" align="center">posterior, hecha para adjuntar notas temporalmente a documentos y otras superficies.</p>     
+            <center><img src="/static/ima1.webp" width="350" height="350" alt=""></center>
+
+            <center><font face="comic sans ms,arial,verdana"><h1>¿Como funciona Post-It-Note-SEAA? </h1></font></center>
+            <p style="font-size: large;" align="center"> Para poder utilizar Post-It-Note-SEAA, primero se requiere que se registre para que se pueda crear </p> 
+            <p style="font-size: large;" align="center">cuenta, una vez que se creo la cuenta inicia sesión y puede empezar por crea una categoría para </p>    
+            <p style="font-size: large;" align="center">poder organizar las notas con mayor facilidad.</p>  
+            <p style="font-size: large;" align="center">Para crear una clasificación solo se necesita resgistrar el nombre de la categoría y para poder crear </p> 
+            <p style="font-size: large;" align="center">una nota se le da un titulo, se ingresa el contenido y la fecha de creación, esta última es para llevar </p>    
+            <p style="font-size: large;" align="center">un control del registro y si son datos importantes eso será de mucha ayuda.</p>   
+            <center><img src="/static/ima2.jpg" width="350" height="350" alt=""></center>
+            <b><p p style="font-size: x-large;" align="center"><a href="{{url_for('registro')}}">Iniciar</a></p><b>
+
+        </div>
+    </div>
+          
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% block body %}
+    <body background="/static/fondo_h.jpg">
+    {% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <img src="/static/logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="#">Post-It-Note-SEAA</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/categoria">Crea categoría</a></li>
+            <li class=""><a href="/crearNota">Nueva nota</a></li>
+            <li class=""><a href="/verNotas">Ver notas</a></li>
+            <li class=""><a href="/logout">Cerrar Sesión</a></li>
+
+          </ul>
+        </div>
+      </nav>
+    {% endblock %}
+    {% block content %}
+    <div class="container">
+        <center><img src="/static/inicio.jpg" width="350" height="350" alt=""></center>
+
+    </div>
+          
+    {% endblock %}
+{% endblock %}
