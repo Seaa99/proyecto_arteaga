@@ -12,7 +12,6 @@ app.debug = True
 Bootstrap(app)
 bcrypt = Bcrypt()
 bcrypt.init_app(app)
-app.secret_key = 'my_secret_key'
 # Configuración de la app  para manejar  sesión
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -96,10 +95,7 @@ def loginin():
         email = request.form["email"]
         pwd = request.form["pwd"]
         usuario_existe = Usuario.query.filter_by(email=email).first()
-        print(usuario_existe)
-        mensaje = usuario_existe.email
         if usuario_existe != None and bcrypt.check_password_hash(usuario_existe.pwd, pwd) :
-            print("Existe")
             mensaje = 'Bienvenido...sesión iniciada'
             #session['email'] = email
             login_user(usuario_existe)	
